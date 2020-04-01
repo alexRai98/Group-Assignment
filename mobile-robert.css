@@ -71,17 +71,20 @@ body {
   margin: 5px 15px;
 }
 
-.profile-2 h1 {
+.profile-2 h1, .profile-2-d h1 {
   font-weight: normal;
   color: #262626;
   font-size: 26px;
   line-height: 32px;
   margin-bottom: 10px;
 }
-.profile-2 a {
+.profile-2 a, .profile-2-d a {
   margin: 0 0 8px 0;
 }
-
+.profile1-d,
+.profile-2-d{
+  display: none;
+}
 /*       DESCRIPTION       */
 
 .description {
@@ -96,8 +99,9 @@ body {
 /*       STORIES       */
 
 .stories ul {
-  margin-left: 5px;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
   list-style: none;
   overflow: scroll;
 }
@@ -113,7 +117,6 @@ body {
 .stories-li img {
   margin: auto 10px;
   margin-top: 10px;
-  border-radius: 50%;
 }
 .stories-li span {
   font-weight: normal;
@@ -159,7 +162,9 @@ body {
 .gadgets div {
   margin: 12px auto;
 }
-
+.nav-pc{
+  display: none;
+}
 /* GALLERY */
 
 .gallery {
@@ -225,37 +230,111 @@ body {
   .gadgets {
     display: none;
   }
-  .insta-header {
-    margin: 50px auto;
-    display: grid;
-    grid-template-rows: repeat(4, auto);
-  }
-  .profile {
-    grid-area: "profile";
-  }
-  .description {
-    grid-area: "description";
-  }
-  .stories {
-    grid-area: "stories";
-  }
-  .numbers {
-    grid-area: "numbers";
-  }
-  .profile1 {
-    margin-left: 40px;
-    width: 150px;
-  }
-  .profile1 img {
-    width: 150px;
+  .insta-header *{
+    margin: 0;
+    padding: 0;
   }
 
-  .profile-2 {
-    display: flex;
-    align-items: flex-start;
-    margin-left: 60px;
+  .insta-header {
+    display: grid;
+    margin: 22px auto 0px auto;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(2, auto) auto auto;
+    grid-template-areas:"profile1 profile2"
+                        "profile1 numbers"
+                        "profile1 description"
+                        "stories stories";
   }
-  .profile-2 > .button-blue {
-    margin-left: 40px;
+  .profile{
+    display: none;
+  }
+  .profile-2-d{
+    grid-area: profile2;
+    display: flex;
+    align-items: center;
+  }
+  .profile1-d{
+    grid-area: profile1;
+    display: flex;
+    justify-content: center;
+  
+  }
+
+  .description {
+    grid-area: description;
+  }
+  .stories {
+    grid-area: stories;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .stories ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    
+  }
+  .stories-li img{
+    border-radius: 0;
+    height: 77px;
+  }
+  .numbers {
+    grid-area: numbers;
+  }
+  .profile1 img{
+    width: 150px;
+  }
+ 
+  .profile-2 > .button-blue,
+  .profile-2-d > .button-blue {
+    margin-left: 60px;
+    margin: 10px 10px;
+    text-decoration: none;
+    padding: 5px 10px 7px 10px;
+    color: #ffffff;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  .numbers{
+    border-style:none;
+    justify-content: flex-start;
+  }
+  .numbers span{
+    margin: 19px auto;
+    display: inline-block;
+    height: 20px;
+    vertical-align: middle;
+  }
+  .numbers div{
+    margin-right: 40px;
+    color: #000000;
+  }
+  .nav-pc{
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .nav-pc ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin:17px 0;
+
+  }
+  .nav-pc-li span{
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #262626;
+    padding: 10px 5px;
+    margin:0 80px;
+    border-top: 2px solid #26262673;;
   }
 }
